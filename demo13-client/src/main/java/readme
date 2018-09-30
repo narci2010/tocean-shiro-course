@@ -1,0 +1,4 @@
+keytool -list -v -keystore cacerts -storepass changeit
+keytool -storepasswd -keystore cacerts
+密码改为123456
+keytool -import -alias localhost -file D:\localhost.cer -noprompt -trustcacerts -storetype jks -keystore cacerts -storepass 123456  

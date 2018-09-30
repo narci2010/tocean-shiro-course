@@ -25,8 +25,12 @@ public class MyRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
 			throws AuthenticationException {
-
-		return new SimpleAuthenticationInfo("wu", passwordService.encryptPassword("123"),
+		String username = token.getPrincipal().toString();
+		String password = "123";
+		if ("abc".equals(username))
+			password = "hello";
+		// encryptPassword的算法根据配置文件而定，默认sha-512
+		return new SimpleAuthenticationInfo(username, passwordService.encryptPassword(password),
 				getName());
 	}
 }

@@ -104,6 +104,14 @@ public class CodecAndCryptoTest {
 	@Test
 	public void testSha512() {
 		String str = "hello";
+		String sha1 = new Sha512Hash(str).toString();
+		System.out.println("testSha512:" + sha1);
+
+	}
+
+	@Test
+	public void testSha512WithSalt() {
+		String str = "hello";
 		String salt = "123";
 		String sha1 = new Sha512Hash(str, salt).toString();
 		System.out.println(sha1);

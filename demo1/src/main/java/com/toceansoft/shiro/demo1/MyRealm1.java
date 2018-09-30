@@ -35,6 +35,7 @@ public class MyRealm1 implements Realm {
 			throw new IncorrectCredentialsException(); // 如果密码错误
 		}
 		// 如果身份认证验证成功，返回一个AuthenticationInfo实现；
+		// MyRealm1 没有设置CredentialsMatch，不需要进行进一步的密码验证
 		return new SimpleAuthenticationInfo(username, password, getName());
 	}
 }

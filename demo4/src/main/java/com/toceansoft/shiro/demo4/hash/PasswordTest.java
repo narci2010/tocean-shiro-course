@@ -16,8 +16,19 @@ public class PasswordTest extends BaseTest {
 	}
 
 	@Test
+	public void testPasswordServiceWithMyRealm2() {
+		login("classpath:shiro-passwordservice.ini", "abc", "hello");
+	}
+
+	@Test
 	public void testPasswordServiceWithJdbcRealm() {
 		login("classpath:shiro-jdbc-passwordservice.ini", "wu", "123");
+	}
+
+	@Test
+	public void testPasswordServiceWithJdbcRealm2() {
+
+		login("classpath:shiro-jdbc-passwordservice.ini", "abc", "hello");
 	}
 
 	@Test
@@ -52,6 +63,7 @@ public class PasswordTest extends BaseTest {
 	}
 
 	private class EnumConverter extends AbstractConverter {
+		// 解决配置文件中的字符串转化成枚举类型
 		@Override
 		protected String convertToString(final Object value) throws Throwable {
 			return ((Enum) value).name();
