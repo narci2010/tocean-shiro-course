@@ -1,0 +1,4 @@
+ private final CookieRetrievingCookieGenerator ticketGrantingTicketCookieGenerator;
+ public void addCookie(final HttpServletRequest request, final HttpServletResponse response, final String cookieValue) {
+}
+TicketGrantingTicketResource
